@@ -20,9 +20,9 @@ function ArrowIcon() {
 }
 
 const heroPoints = [
-  "5 knjig v logičnem zaporedju",
-  "Vizualni primeri in jasne razlage",
-  "Praktičen checklist za vsak posel",
+  "Začni pri osnovah in napreduj po jasnem vrstnem redu",
+  "Razumi, kaj na grafu dejansko iščeš",
+  "Sestavi ponovljiv proces pred vsakim poslom",
 ];
 
 // Variants for staggering the text elements
@@ -54,22 +54,22 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
   return (
     <section className="hero" id="vrh">
       {/* Background decorations - slow pulse/fade */}
-      <motion.div 
-        className="market-grid" 
+      <motion.div
+        className="market-grid"
         aria-hidden="true"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       />
-      <motion.div 
-        className="chart-line chart-line-one" 
+      <motion.div
+        className="chart-line chart-line-one"
         aria-hidden="true"
         initial={{ opacity: 0, scale: 0.8, x: -50 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
       />
-      <motion.div 
-        className="chart-line chart-line-two" 
+      <motion.div
+        className="chart-line chart-line-two"
         aria-hidden="true"
         initial={{ opacity: 0, scale: 0.8, x: 50 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -78,7 +78,7 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
 
       <div className="hero-inner">
         {/* Left side text content */}
-        <motion.div 
+        <motion.div
           className="hero-copy"
           variants={containerVariants}
           initial="hidden"
@@ -97,7 +97,7 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
 
           <motion.ul className="hero-points" variants={itemVariants}>
             {heroPoints.map((point, index) => (
-              <motion.li 
+              <motion.li
                 key={point}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -112,7 +112,7 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
           <motion.div className="price-row" aria-label="Cena kompleta" variants={itemVariants}>
             <span className="price">199 €</span>
             <span className="old-price">299 €</span>
-            <motion.span 
+            <motion.span
               className="saving"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
@@ -121,9 +121,9 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
             </motion.span>
           </motion.div>
 
-          <motion.a 
-            className="primary-cta" 
-            href={primaryCtaUrl} 
+          <motion.a
+            className="primary-cta"
+            href={primaryCtaUrl}
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -145,21 +145,21 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
           className="hero-product"
           aria-label="Komplet petih trgovalnih knjig"
         >
-          <motion.div 
-            className="product-glow" 
-            aria-hidden="true" 
+          <motion.div
+            className="product-glow"
+            aria-hidden="true"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
           />
-          
+
           {/* Main Book Set Cluster */}
           <motion.div
             className="book-set relative aspect-[4/3] w-full max-w-[760px] mx-auto z-10"
             style={{ perspective: "1200px" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: [0, -10, 0] }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.8, delay: 0.3 },
               y: { repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1.1 }
             }}
@@ -195,11 +195,11 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
           </motion.div>
 
           {/* Floating Chips */}
-          <motion.div 
+          <motion.div
             className="product-chip chip-top"
             initial={{ opacity: 0, scale: 0.5, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0, y: [0, -5, 0] }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.5, delay: 0.8 },
               scale: { type: "spring", delay: 0.8 },
               y: { repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1.3 }
@@ -209,11 +209,11 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
             Celotna zbirka
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="product-chip chip-bottom"
             initial={{ opacity: 0, scale: 0.5, x: -20 }}
             animate={{ opacity: 1, scale: 1, x: 0, y: [0, 5, 0] }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.5, delay: 1.0 },
               scale: { type: "spring", delay: 1.0 },
               y: { repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1.5 }

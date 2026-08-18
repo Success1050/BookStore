@@ -208,10 +208,6 @@ export default function Home() {
             <p className="section-kicker">01 / ZBIRKA</p>
             <h2>Pet knjig. En povezan sistem.</h2>
           </div>
-          <p>
-            Vsaka knjiga reši svoj del trgovalnega procesa. Skupaj sestavijo
-            pot od razumevanja trga do samostojnega načrta.
-          </p>
         </div>
 
         <div className="books-grid">
@@ -229,17 +225,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </div>
               <div className="book-card-copy">
-                <p className="book-meta">{book.meta}</p>
-                <h3>{book.title}</h3>
+                <h3>{book.number} {book.title}</h3>
                 <p>{book.description}</p>
-                <ul>
-                  {book.topics.map((topic) => (
-                    <li key={topic}>
-                      <CheckIcon />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </article>
           ))}
