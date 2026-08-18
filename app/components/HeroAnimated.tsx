@@ -154,24 +154,45 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
             transition={{ duration: 1.5, ease: "easeOut" }}
           />
           
-          {/* Main Book Set Floating Animation */}
+          {/* Main Book Set Cluster */}
           <motion.div
+            className="book-set relative aspect-[4/3] w-full max-w-[760px] mx-auto z-10"
+            style={{ perspective: "1200px" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: [0, -10, 0] }}
             transition={{ 
               opacity: { duration: 0.8, delay: 0.3 },
-              y: { repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1.1 }
+              y: { repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1.1 }
             }}
           >
-            <Image
-              className="book-set"
-              src="/books-terminal-5.png"
-              alt="Pet knjig iz zbirke B A Trading"
-              width={1536}
-              height={1024}
-              priority
-              unoptimized
-            />
+            {[
+              { src: "/bookcovers/book-cover-one.png", top: "5%", left: "10%", zIndex: 1 },
+              { src: "/bookcovers/book-cover-two.png", top: "5%", left: "37%", zIndex: 2 },
+              { src: "/bookcovers/book-cover-three.png", top: "5%", left: "64%", zIndex: 3 },
+              { src: "/bookcovers/book-cover-four.png", top: "40%", left: "23.5%", zIndex: 10 },
+              { src: "/bookcovers/book-cover-five.png", top: "40%", left: "50.5%", zIndex: 11 },
+            ].map((cover, i) => (
+              <motion.div
+                key={cover.src}
+                initial={{ opacity: 0, y: 50, rotateY: 30 }}
+                animate={{ opacity: 1, y: 0, rotateY: 12 }}
+                transition={{ duration: 0.8, delay: 0.8 + i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+                className="absolute w-[28%] aspect-[1/1.42] rounded-r-xl shadow-[25px_25px_45px_rgba(0,0,0,0.7),_inset_1px_0_0_rgba(255,255,255,0.2)] bg-[#0a0a0a] border-l-[6px] border-[#1f2937] transform-gpu"
+                style={{ top: cover.top, left: cover.left, zIndex: cover.zIndex }}
+              >
+                <Image
+                  src={cover.src}
+                  alt={`Book cover ${i + 1}`}
+                  fill
+                  className="object-cover rounded-r-xl"
+                  sizes="(max-width: 1024px) 200px, 300px"
+                  unoptimized
+                />
+                {/* Surface highlights */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 rounded-r-xl pointer-events-none" />
+                <div className="absolute inset-0 rounded-r-xl bg-gradient-to-b from-white/10 to-transparent opacity-30 pointer-events-none mix-blend-overlay" />
+              </motion.div>
+            ))}
           </motion.div>
 
           {/* Floating Chips */}
