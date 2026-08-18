@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { AnimatedSection } from "./components/AnimatedSection";
-import { BookCovers } from "./components/BookCovers";
 import { HeroAnimated } from "./components/HeroAnimated";
 
 const configuredCheckoutUrl = "https://buy.stripe.com/eVq3cxgI97Th1UyfPT4Ni04";
@@ -199,8 +198,6 @@ export default function Home() {
           ))}
         </div>
       </AnimatedSection>
-
-      <BookCovers />
 
       <AnimatedSection as="section" className="content-section books-section" id="knjige">
         <div className="section-heading">
