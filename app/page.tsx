@@ -8,9 +8,9 @@ const checkoutUrl = configuredCheckoutUrl;
 const primaryCtaUrl = configuredCheckoutUrl;
 
 const heroPoints = [
-  "5 knjig v logičnem zaporedju",
-  "Vizualni primeri in jasne razlage",
-  "Praktičen checklist za vsak posel",
+  "Začni pri osnovah in napreduj po jasnem vrstnem redu",
+  "Razumi, kaj na grafu dejansko iščeš",
+  "Sestavi ponovljiv proces pred vsakim poslom",
 ];
 
 const metrics = [
@@ -26,7 +26,7 @@ const books = [
     title: "Osnove trgovanja",
     meta: "Temelji · Trgi · Platforma",
     description:
-      "Razumevanje trgov, nastanka cene, ponudbe in povpraševanja ter pravilne uporabe trgovalne platforme.",
+      "Razumi, kako delujejo trgi, cena, platforma, naročila in tveganje.",
     topics: ["Forex, zlato, indeksi in kripto", "Bid, ask, spread, pip in lot", "Seje, naročila in časovni okvirji"],
     image: "/bookcovers/book-cover-one.png"
   },
@@ -35,7 +35,7 @@ const books = [
     title: "Candlestick Patterns",
     meta: "Sveče · Psihologija · Signali",
     description:
-      "Vizualni priročnik za razumevanje sveč, njihove strukture in psihologije kupcev ter prodajalcev.",
+      "Nauči se brati sveče in razumeti, kaj razkrivajo o kupcih in prodajalcih.",
     topics: ["Single, double in triple vzorci", "Prepoznavanje in kontekst", "Pogoste napake pri interpretaciji"],
     image: "/bookcovers/book-cover-two.png"
   },
@@ -44,7 +44,7 @@ const books = [
     title: "Chart Patterns",
     meta: "Strukture · Preboji · Potrditve",
     description:
-      "Jasna razlaga najpomembnejših grafičnih vzorcev in sporočila, ki ga posamezna struktura daje trgu.",
+      "Prepoznaj strukture, preboje ter vzorce nadaljevanja in obrata.",
     topics: ["Reversal in continuation vzorci", "Veljavnost in zavrnitev vzorca", "Praktični primeri z grafov"],
     image: "/bookcovers/book-cover-three.png"
   },
@@ -53,7 +53,7 @@ const books = [
     title: "Analiza trga",
     meta: "Trend · Nivoji · Likvidnost",
     description:
-      "Sistematičen postopek branja trga, preden sploh začneš iskati konkreten vstop v pozicijo.",
+      "Poveži trend, nivoje, likvidnost in kontekst v celotno analizo.",
     topics: ["Market structure in trend", "Support, resistance in ključni nivoji", "Likvidnost, momentum in novice"],
     image: "/bookcovers/book-cover-four.png"
   },
@@ -62,7 +62,7 @@ const books = [
     title: "Izvedba posla",
     meta: "Vstop · SL/TP · Tveganje",
     description:
-      "Od ideje do nadzorovanega posla: pravila vstopa, zaščita kapitala in logično upravljanje pozicije.",
+      "Določi vstop, Stop Loss, cilj, velikost pozicije in tveganje.",
     topics: ["Entry in potrditveni faktorji", "Stop Loss, Take Profit in RRR", "Velikost pozicije in risk management"],
     image: "/bookcovers/book-cover-five.png"
   },
@@ -71,38 +71,46 @@ const books = [
 const valueItems = [
   {
     number: "01",
-    title: "Logičen vrstni red",
-    text: "Ne skačeš med nepovezanimi temami. Vsaka knjiga nadgradi znanje iz prejšnje.",
+    title: "RAZUMI",
+    text: "Temelji, trg, cena in strukture.",
   },
   {
     number: "02",
-    title: "Vizualna razlaga",
-    text: "Kompleksni pojmi so razloženi s strukturami, diagrami in primeri iz grafov.",
+    title: "ANALIZIRAJ",
+    text: "Trend, nivoji, likvidnost in potrditve.",
   },
   {
     number: "03",
-    title: "Praktična uporaba",
-    text: "Teorijo sproti pretvoriš v vprašanja, pravila in korake za lastno analizo.",
+    title: "IZVEDI",
+    text: "Vstop, tveganje, izstop in pregled.",
   },
-  {
-    number: "04",
-    title: "Celoten checklist",
-    text: "Na koncu združiš analizo, izvedbo in tveganje v en ponovljiv proces.",
-  },
+];
+
+const checklistItems = [
+  "Market Structure",
+  "Trend",
+  "Key Level",
+  "Liquidity",
+  "Chart Pattern",
+  "Candlestick Confirmation",
+  "Momentum",
+  "Session & News",
+  "Risk Management",
+  "Trading Plan",
 ];
 
 const suitableFor = [
-  "Popolnega začetnika, ki želi pravilne temelje",
-  "Trgovca z delnim znanjem in brez jasne strukture",
-  "Nekoga, ki prepoznava vzorce, a ne zna sestaviti celotne analize",
-  "Vsakogar, ki želi graditi discipliniran proces namesto ugibanja",
+  "Začenjaš in želiš pravilne temelje",
+  "Poznaš posamezne pojme, vendar nimaš sistema",
+  "Prepoznavaš vzorce, a jih ne znaš povezati v analizo",
+  "Želiš imeti jasen proces pred vsakim poslom",
 ];
 
 const notSuitableFor = [
-  "Iskanje hitrega zaslužka ali zagotovljenega dobička",
-  "Kopiranje signalov brez razumevanja analize",
-  "Trgovanje brez pravil in nadzora tveganja",
-  "Nadomestilo za osebno finančno svetovanje",
+  "Iskanju hitrega ali zagotovljenega zaslužka",
+  "Kopiranju trgovalnih signalov",
+  "Trgovanju brez pravil in upravljanja tveganja",
+  "Nadomestilu za osebno finančno svetovanje",
 ];
 
 const faqs = [
@@ -242,10 +250,9 @@ export default function Home() {
         <div className="system-inner">
           <div className="system-copy">
             <p className="section-kicker">02 / PROCES</p>
-            <h2 id="system-title">Od informacij do jasne odločitve.</h2>
+            <h2 id="system-title">Od grafa, polnega informacij, do jasne odločitve.</h2>
             <p>
-              Cilj zbirke ni pomnjenje desetine nepovezanih izrazov. Cilj je
-              razumeti, kaj preveriš, v kakšnem vrstnem redu in zakaj.
+              Ne potrebuješ še več informacij. Potrebuješ sistem, po katerem jih uporabiš.
             </p>
           </div>
 
@@ -253,69 +260,34 @@ export default function Home() {
             <article>
               <span>01</span>
               <p>RAZUMI</p>
-              <h3>Najprej zgradi temelje</h3>
-              <small>Trgi, cena, sveče in osnovne strukture.</small>
+              <small>Temelji, trg, cena in strukture.</small>
             </article>
             <article>
               <span>02</span>
               <p>ANALIZIRAJ</p>
-              <h3>Nato poišči kontekst</h3>
-              <small>Trend, nivoji, likvidnost, pattern in potrditev.</small>
+              <small>Trend, nivoji, likvidnost in potrditve.</small>
             </article>
             <article>
               <span>03</span>
               <p>IZVEDI</p>
-              <h3>Na koncu zaščiti odločitev</h3>
-              <small>Vstop, tveganje, izstop, dnevnik in pregled.</small>
+              <small>Vstop, tveganje, izstop in pregled.</small>
             </article>
           </div>
         </div>
       </AnimatedSection>
 
-      <AnimatedSection as="section" className="content-section value-section" id="prejmes">
-        <div className="section-heading compact">
-          <div>
-            <p className="section-kicker">03 / KAJ PREJMEŠ</p>
-            <h2>Več kot zbirko definicij.</h2>
-          </div>
-          <p>
-            Vsebina je strukturirana kot učni sistem, ki ga lahko vedno znova
-            uporabiš pri pripravi svoje analize.
-          </p>
-        </div>
-
-        <div className="value-grid">
-          {valueItems.map((item) => (
-            <article className="value-card" key={item.number}>
-              <span>{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="checklist-panel">
+      <AnimatedSection as="section" className="content-section checklist-section" id="prejmes">
+        <div className="checklist-panel" style={{ marginTop: 0 }}>
           <div className="checklist-copy">
-            <p className="section-kicker">10-TOČKOVNI CHECKLIST</p>
-            <h3>Pred vsakim poslom preveri celotno sliko.</h3>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#fff' }}>10-TOČKOVNI TRGOVALNI PROCES</h2>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#97a3b2' }}>Preden odpreš trade, preveri celotno sliko.</h3>
             <p>
-              Market structure, trend, ključni nivo, likvidnost, chart pattern,
-              candlestick potrditev, momentum, čas, tveganje in trgovalni načrt.
+              Pet knjig se na koncu poveže v en proces, ki ga lahko uporabiš pri vsaki novi analizi.
             </p>
+            <p style={{ fontWeight: 'bold', marginTop: '2rem', color: '#fff' }}>Od »kaj gledam?« do »vem, kaj preveriti in zakaj.«</p>
           </div>
           <ol className="checklist-list">
-            {[
-              "Market Structure",
-              "Trend",
-              "Key Level",
-              "Liquidity",
-              "Chart Pattern",
-              "Candlestick Confirmation",
-              "Volume / Momentum",
-              "Session & News",
-              "Risk Management",
-              "Trading Plan",
-            ].map((item, index) => (
+            {checklistItems.map((item, index) => (
               <li key={item}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 {item}
@@ -329,16 +301,12 @@ export default function Home() {
         <div className="audience-inner">
           <div className="audience-intro">
             <p className="section-kicker">04 / ZA KOGA</p>
-            <h2>Za tiste, ki želijo razumeti proces.</h2>
-            <p>
-              Ne glede na to, ali začenjaš iz nič ali že poznaš posamezne
-              pojme, ti zbirka pomaga urediti znanje v uporabno celoto.
-            </p>
+            <h2>Za tiste, ki želijo razumeti svoje odločitve.</h2>
           </div>
 
           <div className="audience-columns">
             <article className="audience-card positive">
-              <p className="audience-label">Komplet je zate, če želiš:</p>
+              <p className="audience-label">Komplet je zate, če:</p>
               <ul>
                 {suitableFor.map((item) => (
                   <li key={item}>
@@ -349,7 +317,7 @@ export default function Home() {
               </ul>
             </article>
             <article className="audience-card negative">
-              <p className="audience-label">Komplet ni namenjen za:</p>
+              <p className="audience-label">Ni namenjen:</p>
               <ul>
                 {notSuitableFor.map((item) => (
                   <li key={item}>

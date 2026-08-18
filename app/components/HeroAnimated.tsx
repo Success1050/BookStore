@@ -86,14 +86,13 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
         >
           <motion.p className="eyebrow" variants={itemVariants}>
             <span />
-            Izobraževalna zbirka za odrasle
+            IZOBRAŽEVALNI SISTEM TRGOVANJA V 5 KNJIGAH
           </motion.p>
           <motion.h1 variants={itemVariants}>
-            Zgradi trgovalno znanje z <em>načrtom</em>, ne z ugibanjem.
+            Ne uči se trgovanja naključno. Nauči se ga po <em>sistemu</em>.
           </motion.h1>
           <motion.p className="hero-lead" variants={itemVariants}>
-            Pet knjig te po jasnem vrstnem redu vodi od osnov finančnih
-            trgov do analize, izvedbe in upravljanja tveganja.
+            Pet povezanih knjig te vodi od razumevanja finančnih trgov do analize, vstopa v posel in upravljanja tveganja.
           </motion.p>
 
           <motion.ul className="hero-points" variants={itemVariants}>
@@ -111,8 +110,8 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
           </motion.ul>
 
           <motion.div className="price-row" aria-label="Cena kompleta" variants={itemVariants}>
-            <span className="price">149 €</span>
-            <span className="old-price">249 €</span>
+            <span className="price">199 €</span>
+            <span className="old-price">299 €</span>
             <motion.span 
               className="saving"
               animate={{ scale: [1, 1.05, 1] }}
