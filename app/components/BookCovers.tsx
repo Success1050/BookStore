@@ -49,6 +49,7 @@ export function BookCovers() {
                 fill
                 className="object-cover rounded-r-2xl"
                 sizes="(max-width: 1024px) 320px, 250px"
+                unoptimized
               />
               {/* Highlight overlay to simulate gloss */}
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-r-2xl pointer-events-none" />

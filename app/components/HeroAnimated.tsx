@@ -170,6 +170,7 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
               width={1536}
               height={1024}
               priority
+              unoptimized
             />
           </motion.div>
 
