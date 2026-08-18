@@ -28,6 +28,7 @@ const books = [
     description:
       "Razumevanje trgov, nastanka cene, ponudbe in povpraševanja ter pravilne uporabe trgovalne platforme.",
     topics: ["Forex, zlato, indeksi in kripto", "Bid, ask, spread, pip in lot", "Seje, naročila in časovni okvirji"],
+    image: "/bookcovers/book-cover-one.png"
   },
   {
     number: "02",
@@ -36,6 +37,7 @@ const books = [
     description:
       "Vizualni priročnik za razumevanje sveč, njihove strukture in psihologije kupcev ter prodajalcev.",
     topics: ["Single, double in triple vzorci", "Prepoznavanje in kontekst", "Pogoste napake pri interpretaciji"],
+    image: "/bookcovers/book-cover-two.png"
   },
   {
     number: "03",
@@ -44,6 +46,7 @@ const books = [
     description:
       "Jasna razlaga najpomembnejših grafičnih vzorcev in sporočila, ki ga posamezna struktura daje trgu.",
     topics: ["Reversal in continuation vzorci", "Veljavnost in zavrnitev vzorca", "Praktični primeri z grafov"],
+    image: "/bookcovers/book-cover-three.png"
   },
   {
     number: "04",
@@ -52,6 +55,7 @@ const books = [
     description:
       "Sistematičen postopek branja trga, preden sploh začneš iskati konkreten vstop v pozicijo.",
     topics: ["Market structure in trend", "Support, resistance in ključni nivoji", "Likvidnost, momentum in novice"],
+    image: "/bookcovers/book-cover-four.png"
   },
   {
     number: "05",
@@ -60,6 +64,7 @@ const books = [
     description:
       "Od ideje do nadzorovanega posla: pravila vstopa, zaščita kapitala in logično upravljanje pozicije.",
     topics: ["Entry in potrditveni faktorji", "Stop Loss, Take Profit in RRR", "Velikost pozicije in risk management"],
+    image: "/bookcovers/book-cover-five.png"
   },
 ];
 
@@ -204,11 +209,16 @@ export default function Home() {
         <div className="books-grid">
           {books.map((book) => (
             <article className="book-card" key={book.number}>
-              <div className="mini-cover" aria-hidden="true">
-                <span className="cover-brand">B /\\ TRADING</span>
-                <strong>{book.number}</strong>
-                <span className="cover-line" />
-                <span className="cover-chart" />
+              <div className="mini-cover group" aria-hidden="true" style={{ padding: 0, background: "none" }}>
+                <Image 
+                  src={book.image} 
+                  alt={book.title} 
+                  fill 
+                  className="object-cover" 
+                  sizes="(max-width: 1024px) 150px, 200px"
+                  unoptimized 
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </div>
               <div className="book-card-copy">
                 <p className="book-meta">{book.meta}</p>
