@@ -3,9 +3,9 @@ import { AnimatedSection } from "./components/AnimatedSection";
 import { BookCovers } from "./components/BookCovers";
 import { HeroAnimated } from "./components/HeroAnimated";
 
-const configuredCheckoutUrl = process.env.NEXT_PUBLIC_CHECKOUT_URL;
-const checkoutUrl = configuredCheckoutUrl ?? "#checkout-povezava";
-const primaryCtaUrl = configuredCheckoutUrl ? checkoutUrl : "#nakup";
+const configuredCheckoutUrl = "https://buy.stripe.com/eVq3cxgI97Th1UyfPT4Ni04";
+const checkoutUrl = configuredCheckoutUrl;
+const primaryCtaUrl = configuredCheckoutUrl;
 
 const heroPoints = [
   "5 knjig v logičnem zaporedju",
