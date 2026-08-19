@@ -169,8 +169,14 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#vrh" aria-label="B A Trading – na vrh strani">
-          <span className="brand-mark">B /\\</span>
-          <span className="brand-name">TRADING</span>
+          <Image
+            src="/logo.png"
+            alt="B A Trading Logo"
+            width={120}
+            height={40}
+            style={{ width: 'auto', height: '32px' }}
+            unoptimized
+          />
         </a>
 
         <nav className="desktop-nav" aria-label="Glavna navigacija">
@@ -188,27 +194,12 @@ export default function Home() {
 
       <HeroAnimated primaryCtaUrl={primaryCtaUrl} />
 
-      <AnimatedSection as="section" className="metrics" aria-label="Ključne informacije o kompletu">
-        <div className="metrics-inner">
-          {metrics.map((metric, i) => (
-            <AnimatedSection className="metric" key={metric.label} delay={0.1 * i} yOffset={20}>
-              <strong>{metric.value}</strong>
-              <span>{metric.label}</span>
-            </AnimatedSection>
-          ))}
-        </div>
-      </AnimatedSection>
-
       <AnimatedSection as="section" className="content-section books-section" id="knjige">
         <div className="section-heading">
           <div>
             <p className="section-kicker">01 / ZBIRKA</p>
             <h2>Pet knjig. En povezan sistem.</h2>
           </div>
-          <p>
-            Vsaka knjiga reši svoj del trgovalnega procesa. Skupaj sestavijo
-            pot od razumevanja trga do samostojnega načrta.
-          </p>
         </div>
 
         <div className="books-grid">
@@ -219,7 +210,7 @@ export default function Home() {
                   src={book.image} 
                   alt={book.title} 
                   fill 
-                  className="object-cover" 
+                  className="object-fill" 
                   sizes="(max-width: 1024px) 150px, 200px"
                   unoptimized 
                 />

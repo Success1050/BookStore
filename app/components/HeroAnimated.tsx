@@ -128,7 +128,7 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Želim komplet 5 knjig
+            Kupi komplet 5 knjig
             <ArrowIcon />
           </motion.a>
 
@@ -183,7 +183,7 @@ export function HeroAnimated({ primaryCtaUrl }: { primaryCtaUrl: string }) {
                   src={cover.src}
                   alt={`Book cover ${i + 1}`}
                   fill
-                  className="object-cover rounded-r-xl"
+                  className="object-fill rounded-r-xl"
                   sizes="(max-width: 1024px) 200px, 300px"
                   unoptimized
                 />
